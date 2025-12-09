@@ -53,4 +53,15 @@
     golang.org/pkg -> get acquainted with this page.
 
 4) func?
+    function keyword.
+    func -> tells go we declare a function
+    main -> sets the name of the function
+    () -> list of arguments needed in the function
+    {} -> function body
+
 5) How is main.go organized?
+    PACKAGE DECLARATION
+
+    IMPORTS
+
+    DECLARE FUNCTIONS VARIABLES AND ALL THAT GOOD STUFF WITH MAIN ENTRY POINT AT THE TOP.

@@ -4,6 +4,10 @@ import "fmt"
 
 func main() {
 
-	fmt.Println("Hello World")
+	printing()
 
+}
+
+func printing() {
+	fmt.Println("Hello World")
 }
