@@ -1,0 +1,20 @@
+5 important questions
+
+1) How do you run go code
+    go run file.go - this is the command to run any go file
+
+    the go command is part of the GO cli and these are the key commands
+    ===============================================
+    go build        ->          Compiles a bunch of go source code files
+        The output of this command is basically a .exe file
+    go run          ->          Compile and execute one or two files
+    go fmt          ->          Formats all the code in each file of the current directory
+    go install      ->          Compiles and installs a package
+    go get          ->          Downloads the raw source code of someone elses package
+    go test         ->          Run any tests associated with the current project
+    ===============================================
+2) What does package main mean?
+
+3) what does import FMT mean
+4) func?
+5) How is main.go organized?
