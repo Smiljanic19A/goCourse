@@ -1,0 +1,9 @@
+We will create a cards package
+
+CARDS
+newDeck -> create a list of playing cards
+print -> log out the contents of a deck of cards
+shuffle -> shuffle the cards
+deal -> create a new hand of cards
+saveToFile -> save a list of cards to a file on the local machine
+newDeckFromFile -> load a list of cards from a local machine
