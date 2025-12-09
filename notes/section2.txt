@@ -41,5 +41,16 @@
         every executable package MUST HAVE a main function.
 
 3) what does import FMT mean
+    Pretty self explanatory.
+
+    fmt is used mostly for printing shit - like console.log or System.out
+
+    Go has a bunch of built in packages - but by default - you do not have access to them unless you import them.
+
+    Same for reusable packages that are not authored by go itself (external packages)
+
+    all the standards packages have in depth docs at
+    golang.org/pkg -> get acquainted with this page.
+
 4) func?
 5) How is main.go organized?
