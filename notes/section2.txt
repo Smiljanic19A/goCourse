@@ -13,7 +13,32 @@
     go get          ->          Downloads the raw source code of someone elses package
     go test         ->          Run any tests associated with the current project
     ===============================================
+
 2) What does package main mean?
+    Package == Project == Workspace
+    1 package can have multiple files - and they are connected by the package statement at the top of the screen
+
+    question - do all these files need to have a main entry point? (function and file)?
+
+    2 types of packages
+
+    1 - EXECUTABLE
+        Generates a file which we can run
+    2 - REUSABLE (basically a lib)
+        Code used as helpers - basically where you would put reusable logic
+
+    How do we define the difference?
+        package main is reserved for executables!!!
+
+        If the package is executable - when executed - we will automatically run the main function.
+
+        package main ---> go build ---> main.exe
+        package blabla ---> go build ---> nothing
+
+        basically - use package main - only when you want to create an executable file
+
+
+        every executable package MUST HAVE a main function.
 
 3) what does import FMT mean
 4) func?
