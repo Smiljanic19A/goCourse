@@ -27,4 +27,12 @@ Multiple ways we can do this
 2 - varname := value -> this infers the type without declaring it explicitly. This can only be done when initializing the value.
 
 
+FUNCTION RETURN TYPES
+    If there is no return type defined explicitly - the function is considered void.
+    If its not void - u have to explicitly define the return type
+
+    example:
+    func determineCardValue() string{
+    	return "Ace Of Spades"
+    }
 

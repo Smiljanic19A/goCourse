@@ -4,7 +4,11 @@ import "fmt"
 
 func main() {
 	//var card string = "Ace Of Spades"
-	card := "Ace of Spades"
+	card := determineCardValue()
 
 	fmt.Println(card)
+}
+
+func determineCardValue() string {
+	return "Ace Of Spades"
 }
