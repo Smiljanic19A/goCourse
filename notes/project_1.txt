@@ -7,3 +7,24 @@ shuffle -> shuffle the cards
 deal -> create a new hand of cards
 saveToFile -> save a list of cards to a file on the local machine
 newDeckFromFile -> load a list of cards from a local machine
+
+
+VARIABLE DECLARATION
+
+Go is statically typed like Java or C++
+
+BASIC GO TYPES (NOT AN EXHAUSTIVE LIST - research this)
+
+TYPE        EXAMPLE
+bool        true, false
+string      "Hello"
+int         0, -10000, 99999
+float64()     10.000001, 0.00009, -100.003
+
+Multiple ways we can do this
+
+1 - var varname type = value
+2 - varname := value -> this infers the type without declaring it explicitly. This can only be done when initializing the value.
+
+
+
