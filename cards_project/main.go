@@ -12,6 +12,10 @@ func main() {
 	for i, card := range cards {
 		fmt.Println(i, card)
 	}
+
+	for _, card := range cards { // ignores index
+		fmt.Println(card)
+	}
 }
 
 func determineCardValue() string {
