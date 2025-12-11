@@ -36,3 +36,30 @@ FUNCTION RETURN TYPES
     	return "Ace Of Spades"
     }
 
+ARRAY VS SLICE IN GO
+    array - fixed length
+        Every element in an array must have the same type
+    slice - like a list - it can grow or shrink
+        Every element in a slice must have the same type
+        you add an element to a slice - by using the append() function
+        append takes in the original slice and the element to add - and then returns a new slice that has to get reasigned to the original
+        slice - does not directly modify it
+
+For loops
+    syntax
+    for index, card := range cards {
+        Do something
+   }
+
+    index - index of the element in the slice/array
+    card - the name of the object u will be referencing from the array
+    := -> shows we are about to determine the range of the loop
+    range cards - > take the slice of cards and loop over it
+
+    why do we use :=
+    because basically every step of the loop - we are reinitalizing index and card - and throwing away the old values.
+
+
+
+
+
