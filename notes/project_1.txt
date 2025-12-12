@@ -87,3 +87,8 @@ print -> function name
 why d?
 Go convention is you use a 1 or 2 letter varname that references the receiver type.
 
+Removing shit from slices in go
+    Basically - the same approach as adding - u use append
+    Basically you go append(var[:index], var[index+1]...)
+
+    This takes everything before index, and everything after index and merges it into 1 slice

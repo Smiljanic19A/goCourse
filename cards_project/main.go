@@ -3,8 +3,7 @@ package main
 import "math/rand/v2"
 
 func main() {
-	cards := deck{determineCardValue()}
-	cards = append(cards, makeRandomCard())
+	cards := newDeck()
 	cards.print()
 }
 
