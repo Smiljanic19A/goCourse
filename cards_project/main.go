@@ -1,21 +1,11 @@
 package main
 
-import "fmt"
 import "math/rand/v2"
 
 func main() {
-	cards := []string{determineCardValue()}
-
+	cards := deck{determineCardValue()}
 	cards = append(cards, makeRandomCard())
-	fmt.Println(cards)
-
-	for i, card := range cards {
-		fmt.Println(i, card)
-	}
-
-	for _, card := range cards { // ignores index
-		fmt.Println(card)
-	}
+	cards.print()
 }
 
 func determineCardValue() string {

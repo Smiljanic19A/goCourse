@@ -59,7 +59,31 @@ For loops
     why do we use :=
     because basically every step of the loop - we are reinitalizing index and card - and throwing away the old values.
 
+GO IS NOT AN OOP LANGUAGE!
+
+(not sure what this means) - but in go rather then creating a class that we want to instance,
+we want to extend a base type with some extra functionality
+To that type we want to assign functions with a receiver
+This is basically like a method - a function that belongs to some instance
+BASIC OOP = METHOD VS GO = FUNCTION WITH A RECEIVER (CONFUSED RN)
+
+PROJECT STRUCTURE
+
+main.go -> entry point
+deck.go -> code that describes a deck and how it works
+deck_test.go -> code to automatically test the deck
 
 
+Receiver functions explanation
 
+func (d deck) print {
+
+} -> basically this just means any object of type deck has access to this function
+
+d -> the actual copy of the type we are working with - available in the function with the letter d - you can name it whatever u want
+deck -> the type of the copy we are working with
+print -> function name
+
+why d?
+Go convention is you use a 1 or 2 letter varname that references the receiver type.
 
