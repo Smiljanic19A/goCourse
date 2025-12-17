@@ -92,3 +92,16 @@ Removing shit from slices in go
     Basically you go append(var[:index], var[index+1]...)
 
     This takes everything before index, and everything after index and merges it into 1 slice
+
+SLICES AND HOW THEY WORK
+ZERO INDEXED
+fruit[0] - access by index
+fruits[starnIndexIncluding:upToNotIncluding] - select a range of indicies
+example
+fruits [0:2]
+IF YOU WANT TO START FROM THE BEGIIINING startIndexIncluding is not neccessary
+EXAMPLE
+fruits[:2]
+same for the inverse - if you want to go from the end to something you can say
+fruits[2:]
+
