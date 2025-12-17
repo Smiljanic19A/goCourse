@@ -107,3 +107,13 @@ fruits[2:]
 
 MULTIPLE RETURN VALUES
 after the input params you just add () where you define all the return types in the order you will return them
+
+IO - READ THE DOCS OF IOUTIL
+1 important note - in go u dont write strings ints or anything else to files like in python
+you write byte slices in the background.
+
+However - go does have type conversion!!!!
+[]byte("Hi there")
+type    Value
+we      to
+want    convert

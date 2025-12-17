@@ -5,11 +5,6 @@ import "fmt"
 type deck []string
 
 // this is a function with a receiver
-func (d deck) print() {
-	for i, card := range d {
-		fmt.Println(i, card)
-	}
-}
 
 func newDeck() deck {
 
@@ -28,4 +23,28 @@ func newDeck() deck {
 
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:] // return from start up to handsize and from the end all the way to handsize
+}
+
+func toString(d deck) string {
+	returnString := ""
+	for _, card := range d {
+		stringToAdd := card + "\n"
+		returnString += stringToAdd
+	}
+	return returnString
+}
+
+// Receiver functions
+func (d deck) toString() string {
+	return toString(d)
+}
+
+func (d deck) toBytes() []byte {
+	return []byte(d.toString())
+}
+
+func (d deck) print() {
+	for i, card := range d {
+		fmt.Println(i, card)
+	}
 }
