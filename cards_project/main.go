@@ -14,4 +14,6 @@ func main() {
 
 	//cardString := toString(hand)
 	fmt.Println(hand.toBytes())
+
+	hand.saveAsFile("deck.txt")
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -45,4 +46,12 @@ func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+
+func (d deck) saveAsFile(filename string) error {
+	err := os.WriteFile(filename, d.toBytes(), 777)
+	if err != nil {
+		return err
+	}
+	return nil
 }
