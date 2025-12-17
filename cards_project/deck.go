@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "strings"
 
 type deck []string
 
@@ -26,12 +27,7 @@ func deal(d deck, handSize int) (deck, deck) {
 }
 
 func toString(d deck) string {
-	returnString := ""
-	for _, card := range d {
-		stringToAdd := card + "\n"
-		returnString += stringToAdd
-	}
-	return returnString
+	return strings.Join(d, "\n")
 }
 
 // Receiver functions
