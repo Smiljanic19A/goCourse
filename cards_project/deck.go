@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 type deck []string
 
