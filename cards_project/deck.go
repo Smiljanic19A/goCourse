@@ -6,8 +6,8 @@ type deck []string
 
 // this is a function with a receiver
 func (d deck) print() {
-	for _, card := range d {
-		fmt.Println(card)
+	for i, card := range d {
+		fmt.Println(i, card)
 	}
 }
 
@@ -24,4 +24,8 @@ func newDeck() deck {
 	}
 
 	return d
+}
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:] // return from start up to handsize and from the end all the way to handsize
 }
