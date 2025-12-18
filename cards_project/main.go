@@ -16,4 +16,7 @@ func main() {
 	fmt.Println(hand.toBytes())
 
 	hand.saveAsFile("deck.txt")
+
+	newDeckFromFile := createDeckFromFile("deck.txt")
+	newDeckFromFile.print()
 }

@@ -33,6 +33,27 @@ func toString(d deck) string {
 	return strings.Join(d, "\n")
 }
 
+func readFromFile(filename string) string {
+	bites, err := os.ReadFile(filename)
+	if err != nil {
+		panic(err)
+	}
+	return string(bites)
+}
+
+func createDeckFromFile(filename string) deck {
+	cards := readFromFile(filename)
+	cardsSlice := strings.Split(cards, "\n")
+	d := deck{}
+
+	for _, card := range cardsSlice {
+		d = append(d, card)
+	}
+
+	return d
+
+}
+
 // Receiver functions
 func (d deck) toString() string {
 	return toString(d)
