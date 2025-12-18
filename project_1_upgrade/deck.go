@@ -37,6 +37,7 @@ func fromFile(filename string) (deck, error) {
 	var d deck
 	deckBytes, err := os.ReadFile(filename)
 	if err != nil {
+		fmt.Println(err)
 		return deck{}, err
 	}
 
@@ -50,12 +51,15 @@ func fromFile(filename string) (deck, error) {
 func (d deck) print() {
 	fmt.Println(d.toString())
 }
+
 func (d deck) toString() string {
 	return strings.Join(d, "\n")
 }
+
 func (d deck) toBytes() []byte {
 	return []byte(d.toString())
 }
+
 func (d deck) toFile(filename string) error {
 	return os.WriteFile(filename, d.toBytes(), 0644)
 }
