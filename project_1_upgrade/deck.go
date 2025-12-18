@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -46,6 +47,28 @@ func fromFile(filename string) (deck, error) {
 		d = append(d, card)
 	}
 	return d, nil
+}
+
+func (d deck) shuffle(timesToShuffle int) deck {
+
+	if timesToShuffle < 1 {
+		fmt.Println("shuffle requires at least 1 times to shuffle")
+		return d
+	}
+	if len(d) < 2 {
+		fmt.Println("shuffle requires at least two times to shuffle")
+		return d
+	}
+
+	fmt.Println("Shuffling deck of length", len(d))
+
+	for i := 0; i < timesToShuffle; i++ {
+		for i, _ := range d {
+			n := rand.Intn(len(d) - 1)
+			d[i], d[n] = d[n], d[i]
+		}
+	}
+	return d
 }
 
 func (d deck) print() {
