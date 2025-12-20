@@ -27,3 +27,6 @@ INITIALIZING A STRUCT
 		lastName:  "Mary",
 		age:       25,
 	}
+
+U COULD ALSO JUST DO
+	secondDude := person{"alex", "jognson", 33}
