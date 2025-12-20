@@ -66,3 +66,16 @@ This outputs
 u modify structs simply by accessing fields with a
 .
 george.firstName = ""
+
+Structs can be embeded as well so 1 struct can contain another
+Like so
+type contactInfo struct {
+	email string
+	zip   string
+}
+type person struct {
+	firstName string
+	lastName  string
+	age       int
+	contact   contactInfo
+}
