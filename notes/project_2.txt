@@ -16,3 +16,14 @@ Collection of properties, related together.
 Like card is a struct with suit and value
 
 Defining a struct
+type person struct {
+	firstName string
+	lastName  string
+	age       int
+}
+INITIALIZING A STRUCT
+	dude := person{
+		firstName: "Dude",
+		lastName:  "Mary",
+		age:       25,
+	}
