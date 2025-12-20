@@ -62,3 +62,7 @@ This code outputs
 fmt.Printf("%+v", george)
 This outputs
 {firstName: lastName: age:0}
+
+u modify structs simply by accessing fields with a
+.
+george.firstName = ""
