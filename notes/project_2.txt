@@ -14,3 +14,5 @@ Struct
 Collection of properties, related together.
 
 Like card is a struct with suit and value
+
+Defining a struct
