@@ -1,0 +1,16 @@
+PROJECT 2
+
+STRUCTS
+
+project 1 had a very stupid thing - cards were a slice of strings - when in reality a deck is a slice of cards which has a value
+and a suit.
+
+To figure out the string or value - we would have to depend on string manipulation
+Thats just straight out dumb.
+
+Now we will make it with structs.
+
+Struct
+Collection of properties, related together.
+
+Like card is a struct with suit and value
