@@ -30,3 +30,35 @@ INITIALIZING A STRUCT
 
 U COULD ALSO JUST DO
 	secondDude := person{"alex", "jognson", 33}
+
+Zero values
+    Very important
+    Lets say we defined a struct like this
+    var george person.
+    The variable was declared but not initialized with properties - therefore Go by default gives it its
+    "Zero values"
+    type        zero value
+    string      ""
+    int         0
+    float       0
+    bool        false
+
+
+type person struct {
+	firstName string
+	lastName  string
+	age       int
+}
+
+func main() {
+	var george person
+
+	fmt.Println(george)
+}
+
+This code outputs
+{  0}
+
+fmt.Printf("%+v", george)
+This outputs
+{firstName: lastName: age:0}
