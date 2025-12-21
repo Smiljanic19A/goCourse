@@ -16,5 +16,7 @@ func main() {
 	for _, color := range colorsTrings {
 		colors[color] = color
 	}
+
+	delete(colors, "red")
 	fmt.Println(colors)
 }
