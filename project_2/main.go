@@ -1,19 +1,16 @@
 package main
 
+import "fmt"
+
 func main() {
-	philip := person{
-		name:     "Philip",
-		lastName: "Philip",
-		age:      25,
-		contact: contact{
-			email: "a@mail.com",
-			zip:   "123456",
-		},
-	}
+	someSlice := []string{"a", "b", "c"}
+	updateSlice(someSlice)
 
-	philip.print()
-
-	philip.updateName("Keva tvoja")
-
-	philip.print()
+	fmt.Println(someSlice)
 }
+
+func updateSlice(slice []string) {
+	slice[0] = "hello"
+}
+
+// Why does this work - why did it not rqueire a pointer?/
