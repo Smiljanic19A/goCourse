@@ -10,5 +10,11 @@ func main() {
 	//	"red":   "#ff0000",
 	//	"green": "#00ff00",
 	//}
+
+	colorsTrings := []string{"red", "blue", "green", "yellow"}
+
+	for _, color := range colorsTrings {
+		colors[color] = color
+	}
 	fmt.Println(colors)
 }
