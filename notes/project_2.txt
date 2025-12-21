@@ -79,3 +79,54 @@ type person struct {
 	age       int
 	contact   contactInfo
 }
+
+
+POINTERS
+RAM
+What we need to understand about ram to understand pointers
+Every time your computer stores something in ram its stored in a memory slot
+this slot can be referenced by a 4 number value
+
+ADDRESS         VALUE
+OOO1            person{firstName: "blabla"...}              ---> jim := person{firstName: ....}             //initial value
+OOO2
+OOO3            person{firstName: "blabla"...               person.updateName("new_name")               // still initial value
+OOO4
+
+Pass by value
+Whenever you pass a value to a function in go - the value gets coppied into a new memory slot
+The original slot still exists - but go copies it into another empty container - and then runs the code
+so when you modify it - you are not updating 0001 - you are updating 0003
+This is all what you would reffer to as a pass by value language
+
+
+Why does go do this?
+A lot of good reasons
+more on that later
+
+What are & and *
+&   - Gives you the memory address of the value - so for example 0001
+*   - Also known as a pointer. Its saying give me the value this address is pointing at
+So basically you are saying give me the value that is contained at 0001 0 so it transforms the &value into the value of the
+examplatory struct in the table above
+
+IMPORTANT
+func (p *person) updateName(name string) {
+	(*p).name = name
+}
+You notice here there is
+*person         ==>         star in front of a type
+*p              ==>         star in front of an actual pointer
+
+This is outlined to describe that * is not strictly an operator - it can be used as a type description as well
+
+Basically
+You can turn a value into an address using  *value
+And you can turn an address into a value using &value
+
+The idea is - that basically when you use * in a type hint - this is not an actual pointer - it just says
+im excpeceting a pointer to a person
+
+If you define *on a receiver function = this will allow you to call the function both with a value and a pointer to a value
+so both (person) and (&person)
+So Go will automatically take the memory address from the value

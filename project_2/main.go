@@ -5,11 +5,15 @@ func main() {
 		name:     "Philip",
 		lastName: "Philip",
 		age:      25,
-		contactInfo: contact{
+		contact: contact{
 			email: "a@mail.com",
 			zip:   "123456",
 		},
 	}
+
+	philip.print()
+
+	philip.updateName("Keva tvoja")
 
 	philip.print()
 }
