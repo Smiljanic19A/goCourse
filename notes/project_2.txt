@@ -172,3 +172,13 @@ string                      channels
 bool                        pointers
 structs                     functions
 
+
+What do we do for key value pairs in go
+    structs
+    maps
+        statically typed
+        all the keys and all the values must be of the same type
+        so 1 type for keys 1 type for values
+Whats the difference between them
+
+
