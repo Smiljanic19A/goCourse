@@ -130,3 +130,45 @@ im excpeceting a pointer to a person
 If you define *on a receiver function = this will allow you to call the function both with a value and a pointer to a value
 so both (person) and (&person)
 So Go will automatically take the memory address from the value
+
+BUTTTT if you try to send a slice of strings to an update function - the update will work? Why is that?
+
+ARRAYS                      SLICES
+Primitive Data              Can grow/shrink
+structure
+
+Cant be resized             99% of the time - used for lists of elements
+
+Rarely used directly
+
+
+What happens in GO when u create a slice?
+Go creates 2 data structures in the backgroudn
+
+1 - the slice
+3 elements
+1) pointer
+    This pointer points to an array
+2) capacity number
+3) length number
+
+2) the array of the values the slice contains
+
+Every time u create a slice - it creates both objects in memory and the slice contains the address of the array that contains the values
+When you pass the slice onto a function - you are passing the slice - not the array - but it contains a pointer to the array
+allowing u to modify it directly
+
+This is the difference between 2 types in GO and programming in general
+Value and reference types
+Value Types
+        Use pointers to change these things in a function
+Reference types
+        Dont worry about pointers with these
+
+Value Types                 Reference types
+int                         slices
+float                       maps
+string                      channels
+bool                        pointers
+structs                     functions
+
