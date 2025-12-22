@@ -16,6 +16,6 @@ func main() {
 
 func printMap(m map[string]string) {
 	for color, hex := range m {
-		fmt.Println(color, hex)
+		fmt.Println("Color", color, "Hex", hex)
 	}
 }
