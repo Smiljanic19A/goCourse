@@ -17,5 +17,10 @@ func main() {
 func printMap(m map[string]string) {
 	for color, hex := range m {
 		fmt.Println("Color", color, "Hex", hex)
+		m[color] = "kurac"
+	}
+
+	for color, hex := range m {
+		fmt.Println("Color", color, "Hex", hex)
 	}
 }
