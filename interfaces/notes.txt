@@ -109,3 +109,18 @@ define an interface type with a method signature
 -> Those types are now also considered the interface type
 -> in other places define methods that take in any type that is considered of the interface type
 -> method works without having to duplicate methods for each different type - the interface type works as an umbrella
+
+1 key rule of interfaces
+INTERFACE DEFINED METHODS MUST HAVE A RECEIVER ATTACHED
+
+Syntax of an interface
+type bot interface{
+methodSignature(string, int) (string, err)
+}
+
+the first() is the input param type values and the second is the return values - just like verything we did so fart
+
+
+1 IMPORTANT NOTE
+There is something called a concrete type in go - which is something u can directly create a value from
+The opposite would be an interface type - which is an interface.
