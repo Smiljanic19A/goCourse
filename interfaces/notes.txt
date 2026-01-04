@@ -84,3 +84,28 @@ Interface (method contract)
 → value is passed as interface type to function
 → function calls method via interface
 → concrete receiver method executes
+
+1 confusing thing
+There is no implements keyword
+So the contract between interface and other types is quite different to the relationship between
+classes and interfaces in for example java or php
+There is no implementation that raises an error if the method is not implemented
+
+Interfaces simply say - if u have a function that is named the same as any of the functions i have
+right here - you are now an honorary member of type whatevertheinterfacenameis
+
+Basically its a tool to implement polymorphism - which i believe is a bit different in Java or Php
+
+This is why Go is called “structural typing” — types satisfy interfaces based on their structure,
+not an explicit declaration.
+
+IMPORTANT GOTCHA
+Types in go - can be morphed into the interface type - only and only if they implement all the methods defined
+in the interface type - otherwise the contract is not valid
+
+1 more clarification of the flow
+define an interface type with a method signature
+-> Implement said methods in other different types
+-> Those types are now also considered the interface type
+-> in other places define methods that take in any type that is considered of the interface type
+-> method works without having to duplicate methods for each different type - the interface type works as an umbrella
