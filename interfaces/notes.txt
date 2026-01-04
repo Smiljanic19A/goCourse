@@ -1,0 +1,34 @@
+The question we are asking
+- Each variable has a type and each function has a return type
+So many types everywhere
+This can lead to us having to rewrite identical functions - and or variables (duplicate code) - just to
+accomodate for different types
+
+For example
+func (d deck) shuffle(timesToShuffle int) deck {
+
+	if timesToShuffle < 1 {
+		fmt.Println("shuffle requires at least 1 times to shuffle")
+		return d
+	}
+	if len(d) < 2 {
+		fmt.Println("shuffle requires at least two times to shuffle")
+		return d
+	}
+
+	fmt.Println("Shuffling deck of length", len(d))
+
+	for i := 0; i < timesToShuffle; i++ {
+		for i, _ := range d {
+			n := rand.Intn(len(d) - 1)
+			d[i], d[n] = d[n], d[i]
+		}
+	}
+	return d
+}
+
+This function - must accept a deck - but any slice can be shufeled - so this is not ideal
+
+THIS IS WHERE INTERFACES COME IN
+How?
+
