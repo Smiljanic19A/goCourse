@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	spanish := SpanishBot{
 		greeting: "Hola essey",
@@ -8,6 +10,11 @@ func main() {
 		greeting: "Hey fren",
 	}
 
+	printGreeting(english)
 	printGreeting(spanish)
-	printGreetingEn(english)
+
+}
+
+func printGreeting(b bot) {
+	fmt.Println(b.getGreeting())
 }

@@ -32,3 +32,55 @@ This function - must accept a deck - but any slice can be shufeled - so this is 
 THIS IS WHERE INTERFACES COME IN
 How?
 
+By defining functions - that will be able to receive any type that implements the interface - and then using them as such
+so what we did
+
+Defined this interface
+package main
+
+type bot interface {
+	getGreeting() string
+}
+
+
+Implemented it in englishBot.go and spanishBot.go
+Like such
+
+package main
+
+type EnglishBot struct {
+	greeting string
+}
+
+func (e EnglishBot) getGreeting() string {
+	return e.greeting
+}
+
+
+We just changed the receiver type for spanish bot
+
+package main
+
+type SpanishBot struct {
+	greeting string
+}
+
+func (s SpanishBot) getGreeting() string {
+	return s.greeting
+}
+
+
+And then in main.go - we defined pritnGreeting like such
+func printGreeting(b bot) {
+	fmt.Println(b.getGreeting())
+}
+
+just a function that takes in any type that implements this interface
+So the flow would be
+
+Interface (method contract)
+→ struct defines method with receiver
+→ compiler verifies struct satisfies interface
+→ value is passed as interface type to function
+→ function calls method via interface
+→ concrete receiver method executes
