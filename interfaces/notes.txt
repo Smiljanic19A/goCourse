@@ -124,3 +124,13 @@ the first() is the input param type values and the second is the return values -
 1 IMPORTANT NOTE
 There is something called a concrete type in go - which is something u can directly create a value from
 The opposite would be an interface type - which is an interface.
+
+Extra interface notes
+Interfaces are NOT GENERIC TYPES - go does not support generic types
+Interfaces are implicit - we dont manually have to say that a custom concrete type satisfies an interface - hence the missing implements keyword
+Interfaces are contracts made to help us manage types
+
+
+
+
+A generic is a type or function that can work with any data type, like a Java Box<T> that can hold a String (Box<String>) or an Integer (Box<Integer>).
