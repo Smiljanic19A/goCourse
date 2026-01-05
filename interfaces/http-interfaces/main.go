@@ -15,6 +15,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	io.Copy(os.Stdout, resp.Body)
+	w, e := io.Copy(os.Stdout, resp.Body)
+	if e != nil {
+		panic(e)
+	}
+	fmt.Println(w)
 
 }
