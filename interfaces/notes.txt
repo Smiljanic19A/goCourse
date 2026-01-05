@@ -130,7 +130,25 @@ Interfaces are NOT GENERIC TYPES - go does not support generic types
 Interfaces are implicit - we dont manually have to say that a custom concrete type satisfies an interface - hence the missing implements keyword
 Interfaces are contracts made to help us manage types
 
-
-
-
 A generic is a type or function that can work with any data type, like a Java Box<T> that can hold a String (Box<String>) or an Integer (Box<Integer>).
+
+Important - a struct can have an interface as a field - and that can have any type that implements the interface
+
+In GO - an interface can contain other interfaces as its fields
+A good example of this is the ReaderCloser interface which has 2 other interfaces as fields - Reader and Closer
+
+To satisfy that master interface - u have to satisfy all the sub interfaces
+
+How the reader interface works
+If something implements it - then u have the Read function - where u pass in a byte slice (make sure to size the slize accordingly with
+the make function - because read does not resize the slice) -> which then just populates the slice given to it
+
+Like so
+	bs := make([]byte, 99999)
+	resp.Body.Read(bs)
+
+
+How io.Copy works?
+It takes in 2 params
+1 is any type - that implements the Writer interface - while the second is any type that implements the Reader interface
+Reader reads the data - does the byte slice creation that we saw a bit above - and then writes it out to some form of output
