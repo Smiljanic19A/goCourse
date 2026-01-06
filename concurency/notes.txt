@@ -1,0 +1,101 @@
+When u run a go program - u automatically create a go routine.
+The main go routine
+
+Fun fact
+If u run into a line of code - that stops future execution untill it is done - this is called a blocking call
+
+U define a go routine by using the go keyword before calling a function
+
+How do goroutines work?
+
+        One CPU core
+             |
+             |
+             |
+        Go Scheduler
+  |          |          |
+  |          |          |
+  |          |          |
+  |          |          |
+  |          |          |
+  GR        GR          GR
+
+  The scheduler is tasked with running a go routine untill its over or untill it makes a blocking call
+
+  What is important in this sentance
+  1 - even if u have a dual core or multi core machine - by default - go utilizes 1
+  2 - if no blocking call is made - the code will be executed exactly the same as if there were no paralelism involved
+
+  None of this is true for new go
+  For new go - there is a varibale called GOMAXPROCS - and it defaults to the number of cores on a system
+  it used to be 1 by default
+
+  Also goroutines now can be interupted even if they are never blocked
+
+  concurency vs paralelism
+  Paralelism and concurency have the same end goal - but the difference is concurency works on 1 logical core - while paralelism
+  exists only of we have multiple physical cores at the same time
+  so concurency - looks like its working at the same time
+  paralelism - actually works at the same time
+
+  First gotcha
+
+  All the goroutines we launch in main - are child goroutines of the main routine - which is our entire program
+  The main routine - is the one that decides when the program exits
+  so in this code snippet
+  func main() {
+  	for _, website := range websites {
+  		go checkLink(website)
+  	}
+  }
+
+  This will dispatch the child routines - and then exit - cause it has nothing else to run without awaiting the child routines
+  This issue is solved with chanels
+  used to communicate between different running go routines
+
+
+                        CHILD GO ROUTINE
+                              |
+                              |
+                              |
+                              |
+MAIN ROUTINE <-----------> CHANNEL <-----------> CHILD GO ROUTINE
+                              |
+                              |
+                              |
+                              |
+                        CHILD GO ROUTINE
+
+Chanels are the only way to communicate between go routines
+In go practically - they are literally values
+They are typed - just like any other variable - so for example - u can have a string channel - a bool value etcetc.
+U cant just throw in any type u want
+
+
+Thats all good - and then u run into blocking channels
+
+So  - lets take this code snippet
+
+func main() {
+	for _, website := range websites {
+		go checkLink(website)
+	}
+}
+
+func checkLink(link string) {
+	resp, err := http.Get(link)
+	if err != nil {
+		errString := "Error occured calling " + link + " Error" + err.Error()
+		c <- errString
+		return
+	}
+
+	if resp.StatusCode == 200 {
+		c <- "All good with: " + link
+		return
+	}
+
+	c <- "Anomaly detected for " + link + " Non 200 status code received" + resp.Status
+}
+
+This will stop execution after 1 message comes into the channel - cause thats all it was told to do
